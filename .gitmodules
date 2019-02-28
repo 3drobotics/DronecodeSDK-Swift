@@ -1,3 +1,4 @@
 [submodule "proto"]
-	path = proto
-	url = https://github.com/dronecode/dronecodesdk-proto
+    path = proto
+    url = https://github.com/3drobotics/dronecodesdk-proto
+    branch = douglas/add-params4
