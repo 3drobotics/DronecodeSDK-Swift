@@ -16,6 +16,7 @@ public class Drone {
     public let core: Core
     public let info: Info
     public let mission: Mission
+    public let params: Params
     public let telemetry: Telemetry
 
     public init(address: String = "localhost",
@@ -29,6 +30,7 @@ public class Drone {
         self.core = Core(address: address, port: port, scheduler: scheduler)
         self.info = Info(address: address, port: port, scheduler: scheduler)
         self.mission = Mission(address: address, port: port, scheduler: scheduler)
+        self.params = Params(address: address, port: port, scheduler: scheduler)
         self.telemetry = Telemetry(address: address, port: port, scheduler: scheduler)
     }
 
