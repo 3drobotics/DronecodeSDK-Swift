@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A57B50B82280EBF100616416 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A57B50B72280EBF100616416 /* Foundation.framework */; };
 		A5CB9E57225689B7005D36AF /* gimbal.grpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB9E54225689B7005D36AF /* gimbal.grpc.swift */; };
 		A5CB9E58225689B7005D36AF /* gimbal.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB9E55225689B7005D36AF /* gimbal.pb.swift */; };
 		A5CB9E59225689B7005D36AF /* Gimbal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB9E56225689B7005D36AF /* Gimbal.swift */; };
@@ -149,6 +150,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A57B50B72280EBF100616416 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A5CB9E54225689B7005D36AF /* gimbal.grpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gimbal.grpc.swift; sourceTree = "<group>"; };
 		A5CB9E55225689B7005D36AF /* gimbal.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gimbal.pb.swift; sourceTree = "<group>"; };
 		A5CB9E56225689B7005D36AF /* Gimbal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gimbal.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A57B50B82280EBF100616416 /* Foundation.framework in Frameworks */,
 				BF_473BC225A72DCFE26546F050392A4D99 /* backend.framework in Frameworks */,
 				BF_B0155F8B23A83C15B86C7829ED9124D8 /* BoringSSL.framework in Frameworks */,
 				BF_763980008B136C2EB8DD3765E3B500DD /* CgRPC.framework in Frameworks */,
@@ -323,6 +326,7 @@
 		G_6CEF65D4C2779DDCFD78CAA49D27C78F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A57B50B72280EBF100616416 /* Foundation.framework */,
 				G_1A19ABF964EBD7DFD65CA81C0362988E /* Carthage */,
 			);
 			name = Frameworks;
@@ -537,6 +541,7 @@
 		BC_43342435054C769540E65515B413ABFB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -550,6 +555,7 @@
 				INFOPLIST_FILE = "Sources/Dronecode-SDK-Swift/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.dronecode.sdk.Dronecode-SDK-Swift";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -561,6 +567,7 @@
 		BC_5EA5F8A4840093BD3EE0AC62BB8FA566 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -574,6 +581,7 @@
 				INFOPLIST_FILE = "Sources/Dronecode-SDK-Swift/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.dronecode.sdk.Dronecode-SDK-Swift";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -585,6 +593,7 @@
 		BC_5EFDB0D22D5CBC572E2ED480D81C720A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -646,6 +655,7 @@
 		BC_77359D6C61C9B20636A606ECF5CF870D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
