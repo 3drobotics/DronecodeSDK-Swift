@@ -1,4 +1,4 @@
-# Dronecode-SDK-Swift
+# MAVSDK-Swift
 
 ## Getting started in iOS
 
@@ -13,13 +13,51 @@ gem install --user xcodeproj
 Add the following to your `Cartfile`:
 
 ```shell
-github "Dronecode/DronecodeSDK-Swift" ~> 0.3.0
+github "mavlink/MAVSDK-Swift" ~> 0.5.0
 ```
 
 And then get the framework using:
 
 ```shell
 carthage bootstrap --platform ios
+```
+
+Back in your Xcode project you will need to import the libraries. On your application targets’ General settings tab, in the “Linked Frameworks and Libraries” section, drag and drop all files with the file extension `.framework` into here, except for `RxTest.framework` or your app will crash.
+
+On your application targets’ Build Phases settings tab, click the + icon and choose New Run Script Phase. Create a Run Script in which you specify your shell (ex: /bin/sh), add the following contents to the script area below the shell:
+```
+/usr/local/bin/carthage copy-frameworks
+```
+Add the paths to the frameworks under “Input Files".
+```
+$(SRCROOT)/Carthage/Build/iOS/SwiftProtobuf.framework
+$(SRCROOT)/Carthage/Build/iOS/SwiftGRPC.framework
+$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework
+$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework
+$(SRCROOT)/Carthage/Build/iOS/RxBlocking.framework
+$(SRCROOT)/Carthage/Build/iOS/RxAtomic.framework
+$(SRCROOT)/Carthage/Build/iOS/Dronecode_SDK_Swift.framework
+$(SRCROOT)/Carthage/Build/iOS/CgRPC.framework
+$(SRCROOT)/Carthage/Build/iOS/BoringSSL.framework
+$(SRCROOT)/Carthage/Build/iOS/backend.framework
+```
+Add the paths to the copied frameworks to the “Output Files”.
+```
+$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SwiftProtobuf.framework
+$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SwiftGRPC.framework
+$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework
+$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxCocoa.framework
+$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxBlocking.framework
+$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxAtomic.framework
+$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Dronecode_SDK_Swift.framework
+$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/CgRPC.framework
+$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/BoringSSL.framework
+$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/backend.framework
+```
+#### Troubleshooting
+If you run into any issues with running the carthage command then you can clear the cache and try it again
+```
+rm -rf Carthage ~/Library/Caches/org.carthage.CarthageKit ~/Library/Caches/carthage
 ```
 
 ### Start MAVLink connection
@@ -61,11 +99,11 @@ Learn more about RxSwift [here](https://github.com/ReactiveX/RxSwift), and have 
 
 ### Examples
 
-Check out the [examples](https://github.com/Dronecode/DronecodeSDK-Swift-Example) for more examples using this framework.
+Check out the [examples](https://github.com/mavlink/MAVSDK-Swift-Example) for more examples using this framework.
 
 ## Contribute
 
-If you want to contribute, please check out: [CONTRIBUTING.md](https://github.com/Dronecode/DronecodeSDK-Swift/blob/master/CONTRIBUTING.md).
+If you want to contribute, please check out: [CONTRIBUTING.md](https://github.com/mavlink/MAVSDK-Swift/blob/master/CONTRIBUTING.md).
 
 ### Build the SDK
 
