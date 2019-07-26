@@ -521,7 +521,7 @@ public class Offboard {
 
             
                 
-            request.positionNedYaw = positionNedYaw.rpcPositionNedYaw
+            request.positionNedYaw = positionNedYaw.rpcPositionNEDYaw
                 
             
 
@@ -567,7 +567,7 @@ public class Offboard {
 
             
                 
-            request.velocityNedYaw = velocityNedYaw.rpcVelocityNedYaw
+            request.velocityNedYaw = velocityNedYaw.rpcVelocityNEDYaw
                 
             
 
